@@ -10,23 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Press+Start+2P&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     /* =====================================================================
-       SOLAT QUEST – EXTREME GLASSMORPHISM + MULTI-THEME ARCHITECTURE
+       SOLAT QUEST – EMPTY TRANSPARENT BACKGROUND + DARK GLASSMORPHISM BOX
        ===================================================================== */
     :root {
-      --bg-navy: #100D25;
-      --bg-purple: #25143E;
       --accent-primary: #FF4FA3;
       --accent-neon: #FF2D75;
-      --accent-purple: #A66BFF;
-      --accent-cyan: #4EDFFF;
+      --accent-purple: #9B5CFF;
+      --accent-cyan: #50DCFF;
       --text-white: #FFFFFF;
-      --text-soft: #D7D2E2;
+      --text-soft: #E9D5FF;
 
-      /* Master Purple-Tinted Glass Container Tokens */
-      --master-glass-bg: rgba(115, 75, 180, 0.18);
-      --master-glass-border: rgba(210, 180, 255, 0.25);
-      --master-glass-glow: rgba(155, 92, 255, 0.18);
-      --master-glass-shadow: 0 12px 32px rgba(16, 13, 37, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      /* Dark Glass Box Tokens: 20px blur, rich theme dark tint, subtle border & soft glow */
+      --master-glass-bg: linear-gradient(155deg, rgba(20, 10, 42, 0.94), rgba(42, 22, 75, 0.92));
+      --master-glass-border: rgba(184, 154, 255, 0.28);
+      --master-glass-glow: rgba(184, 154, 255, 0.16);
+      --master-glass-shadow: 0 22px 48px rgba(8, 4, 20, 0.45), inset 0 1px 0 rgba(233, 213, 255, 0.16);
+      --master-glass-blur: 20px;
       --master-radius: 26px;
 
       /* Category Colors (Consistent Across All Views) */
@@ -37,79 +36,68 @@
       --cat-fili: #4EDFFF;
       --cat-fili-glow: rgba(78, 223, 255, 0.36);
 
-      /* Theme Dynamic Variables */
-      --theme-primary: #FF4FA3;
-      --theme-secondary: #9B5CFF;
-      --theme-glow: rgba(255, 79, 163, 0.28);
-      --theme-mesh-1: rgba(155, 92, 255, 0.22);
-      --theme-mesh-2: rgba(255, 79, 163, 0.14);
-      --theme-mesh-3: rgba(78, 223, 255, 0.10);
+      /* Theme Dynamic Accent Variables */
+      --theme-primary: #C084FC;
+      --theme-secondary: #2A164B;
+      --theme-accent-alt: #50DCFF;
+      --theme-glow: rgba(184, 154, 255, 0.24);
       --display-font: 'Space Grotesk', 'Inter', sans-serif;
       --body-font: 'Inter', sans-serif;
     }
 
-    /* THEME 1 – FUTURISTIC (DEFAULT) */
+    /* THEME 1 – FUTURISTIC (DARK PURPLE GLASS + LAVENDER BORDER + SOFT LAVENDER GLOW) */
     body[data-theme="futuristic"],
     body[data-theme="neon-pink"] {
-      --bg-navy: #100B20;
-      --bg-purple: #21113B;
-      --text-white: #FFFFFF;
-      --text-soft: #E2D9F8;
-      --theme-primary: #FF4FA3;
-      --theme-secondary: #6339A8;
-      --theme-accent-alt: #50DCFF;
-      --theme-glow: rgba(255, 79, 163, 0.32);
-      --theme-mesh-1: rgba(99, 57, 168, 0.28);
-      --theme-mesh-2: rgba(255, 79, 163, 0.16);
-      --theme-mesh-3: rgba(80, 220, 255, 0.12);
-      --master-glass-bg: rgba(99, 57, 168, 0.18);
+      --text-white: #F8FAFC;
+      --text-soft: #E9D5FF;
+      --theme-primary: #C084FC;
+      --theme-secondary: #2A164B;
+      --theme-accent-alt: #67E8F9;
+      --theme-glow: rgba(184, 154, 255, 0.24);
+      --master-glass-bg: linear-gradient(155deg, rgba(20, 10, 42, 0.94), rgba(42, 22, 75, 0.92));
       --master-glass-border: rgba(184, 154, 255, 0.28);
-      --master-glass-glow: rgba(184, 154, 255, 0.18);
+      --master-glass-glow: rgba(184, 154, 255, 0.16);
+      --master-glass-shadow: 0 22px 48px rgba(8, 4, 20, 0.45), inset 0 1px 0 rgba(233, 213, 255, 0.16);
+      --master-glass-blur: 20px;
       --master-radius: 26px;
       --display-font: 'Space Grotesk', 'Inter', sans-serif;
       --body-font: 'Inter', sans-serif;
     }
 
-    /* THEME 2 – RETRO – BLUE ARCADE */
+    /* THEME 2 – RETRO (DARK NAVY BLUE GLASS + BRIGHT CYAN/BLUE CONTRAST) */
     body[data-theme="retro"] {
-      --bg-navy: #071B3A;
-      --bg-purple: #0B2D59;
-      --text-white: #F4F8FF;
-      --text-soft: #C7E4FF;
-      --theme-primary: #35A7FF;
-      --theme-secondary: #1464D2;
-      --theme-accent-alt: #F2C94C;
-      --theme-glow: rgba(53, 167, 255, 0.34);
-      --theme-mesh-1: rgba(20, 100, 210, 0.34);
-      --theme-mesh-2: rgba(53, 167, 255, 0.18);
-      --theme-mesh-3: rgba(139, 228, 255, 0.14);
-      --master-glass-bg: rgba(11, 45, 89, 0.34);
-      --master-glass-border: rgba(139, 228, 255, 0.36);
-      --master-glass-glow: rgba(53, 167, 255, 0.22);
-      --master-radius: 12px;
+      --text-white: #F0F9FF;
+      --text-soft: #7DD3FC;
+      --theme-primary: #38BDF8;
+      --theme-secondary: #0F2952;
+      --theme-accent-alt: #67E8F9;
+      --theme-glow: rgba(56, 189, 248, 0.24);
+      --master-glass-bg: linear-gradient(155deg, rgba(7, 20, 46, 0.94), rgba(15, 41, 82, 0.92));
+      --master-glass-border: rgba(125, 211, 252, 0.32);
+      --master-glass-glow: rgba(56, 189, 248, 0.18);
+      --master-glass-shadow: 0 22px 48px rgba(4, 12, 30, 0.48), inset 0 1px 0 rgba(186, 230, 253, 0.18);
+      --master-glass-blur: 20px;
+      --master-radius: 16px;
       --display-font: 'Press Start 2P', 'Space Grotesk', monospace;
       --body-font: 'Space Grotesk', 'Inter', sans-serif;
     }
 
-    /* THEME 3 – GUNDAM – MECHA WHITE RED BLUE */
+    /* THEME 3 – GUNDAM (DARK GUNMETAL / METALLIC GREY GLASS + WHITE, RED & BLUE ACCENTS) */
     body[data-theme="gundam"],
     body[data-theme="cyber-blue"],
     body[data-theme="purple-galaxy"] {
-      --bg-navy: #DCE1E8;
-      --bg-purple: #F4F5F7;
-      --text-white: #0B2B57;
-      --text-soft: #303744;
-      --theme-primary: #D62835;
-      --theme-secondary: #164B9A;
-      --theme-accent-alt: #F2C94C;
-      --theme-glow: rgba(22, 75, 154, 0.24);
-      --theme-mesh-1: rgba(22, 75, 154, 0.14);
-      --theme-mesh-2: rgba(214, 40, 53, 0.10);
-      --theme-mesh-3: rgba(242, 201, 76, 0.14);
-      --master-glass-bg: rgba(244, 245, 247, 0.78);
-      --master-glass-border: rgba(22, 75, 154, 0.32);
-      --master-glass-glow: rgba(22, 75, 154, 0.16);
-      --master-radius: 14px;
+      --text-white: #FFFFFF;
+      --text-soft: #E2E8F0;
+      --theme-primary: #EF4444;
+      --theme-secondary: #1E293B;
+      --theme-accent-alt: #60A5FA;
+      --theme-glow: rgba(148, 163, 184, 0.24);
+      --master-glass-bg: linear-gradient(155deg, rgba(24, 28, 36, 0.94), rgba(43, 49, 62, 0.92));
+      --master-glass-border: rgba(203, 213, 225, 0.3);
+      --master-glass-glow: rgba(226, 232, 240, 0.15);
+      --master-glass-shadow: 0 22px 46px rgba(9, 11, 16, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      --master-glass-blur: 20px;
+      --master-radius: 16px;
       --display-font: 'Rajdhani', 'Space Grotesk', sans-serif;
       --body-font: 'Rajdhani', 'Inter', sans-serif;
     }
@@ -126,12 +114,15 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* Strictly empty, transparent background on root, html, body & wrappers */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--bg-navy) 0%, var(--bg-purple) 100%);
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
       color: var(--text-white);
       font-family: var(--body-font);
       overflow-x: hidden;
@@ -141,90 +132,6 @@
     h1, h2, h3, .font-display {
       font-family: var(--display-font);
     }
-
-    /* Ambient Background Layers (Keep Transparent Outside Master Glass) */
-    .ambient-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 18% 20%, var(--theme-mesh-1), transparent 46%),
-        radial-gradient(circle at 82% 24%, var(--theme-mesh-2), transparent 48%),
-        radial-gradient(circle at 50% 88%, var(--theme-mesh-3), transparent 52%),
-        linear-gradient(135deg, var(--bg-navy) 0%, var(--bg-purple) 100%);
-    }
-
-    /* Light CRT Scanlines for Retro Blue Arcade Theme */
-    body[data-theme="retro"] .ambient-backdrop::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(139, 228, 255, 0.04) 0px,
-        rgba(139, 228, 255, 0.04) 1px,
-        transparent 1px,
-        transparent 4px
-      );
-      pointer-events: none;
-    }
-
-    .light-streak {
-      position: absolute;
-      height: 1px;
-      width: 42vw;
-      background: linear-gradient(90deg, transparent, var(--theme-primary), transparent);
-      opacity: 0.25;
-      filter: blur(0.5px);
-      animation: streakMove 11s linear infinite;
-    }
-
-    .light-streak.streak-1 {
-      top: 22%;
-      left: -45%;
-      animation-duration: 12s;
-    }
-
-    .light-streak.streak-2 {
-      top: 68%;
-      left: -45%;
-      width: 30vw;
-      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-      animation-delay: -5s;
-      animation-duration: 15s;
-    }
-
-    /* Cosmic Nebula & Soft Purple Light Beams */
-    .cosmic-nebula {
-      position: absolute;
-      inset: -12%;
-      background:
-        radial-gradient(ellipse 46% 36% at 24% 28%, rgba(155, 92, 255, 0.24), transparent 70%),
-        radial-gradient(ellipse 42% 38% at 78% 32%, rgba(217, 74, 255, 0.16), transparent 72%),
-        radial-gradient(ellipse 52% 40% at 62% 82%, rgba(80, 220, 255, 0.11), transparent 72%);
-      filter: blur(28px);
-      animation: nebulaDrift 18s ease-in-out infinite alternate;
-    }
-
-    @keyframes nebulaDrift {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      100% { transform: translate3d(-2%, 2.5%, 0) scale(1.05); }
-    }
-
-    .light-beam {
-      position: absolute;
-      top: -20%;
-      width: 18vw;
-      height: 140vh;
-      background: linear-gradient(180deg, rgba(184, 154, 255, 0.11), rgba(255, 79, 163, 0.04) 55%, transparent);
-      transform: rotate(18deg);
-      pointer-events: none;
-    }
-
-    .light-beam.beam-left { left: 16%; }
-    .light-beam.beam-right { right: 18%; transform: rotate(-16deg); opacity: 0.7; }
 
     /* Hero Hologram Rings & Crystalline Accents */
     .holo-ring-outer {
@@ -258,17 +165,6 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    .cta-gradient-btn {
-      background: linear-gradient(135deg, rgba(155, 92, 255, 0.45), rgba(255, 79, 163, 0.42));
-      border-color: rgba(255, 79, 163, 0.78);
-      box-shadow: 0 0 26px rgba(255, 79, 163, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22);
-    }
-
-    .cta-gradient-btn:hover {
-      background: linear-gradient(135deg, rgba(155, 92, 255, 0.65), rgba(255, 79, 163, 0.62));
-      box-shadow: 0 0 34px rgba(255, 79, 163, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.32);
-    }
-
     .nav-rail-item {
       position: relative;
       width: 100%;
@@ -279,13 +175,15 @@
       border: 1px solid var(--master-glass-border);
       border-radius: 12px;
       color: var(--text-white);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       cursor: pointer;
       transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     body[data-theme="gundam"] .nav-rail-item {
-      background: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .nav-rail-item::before {
@@ -306,7 +204,7 @@
       color: var(--text-white);
       transform: translateY(-2px);
       border-color: var(--theme-primary);
-      background: rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.14);
       box-shadow: 0 6px 18px var(--theme-glow);
     }
 
@@ -319,14 +217,22 @@
       color: #FFFFFF;
       border: 1.5px solid var(--theme-primary);
       border-radius: 14px;
-      background: linear-gradient(120deg, var(--theme-secondary), var(--theme-primary));
-      box-shadow: 0 0 26px var(--theme-glow);
+      background: linear-gradient(120deg, rgba(139, 92, 246, 0.62), rgba(255, 79, 163, 0.52));
+      box-shadow: 0 0 24px var(--theme-glow);
       padding: 0.92rem 1.2rem;
+    }
+
+    body[data-theme="retro"] .nav-rail-item.nav-start-highlight {
+      background: linear-gradient(120deg, rgba(2, 132, 199, 0.72), rgba(56, 189, 248, 0.48));
+    }
+
+    body[data-theme="gundam"] .nav-rail-item.nav-start-highlight {
+      background: linear-gradient(120deg, rgba(37, 99, 235, 0.78), rgba(220, 38, 38, 0.78));
     }
 
     .nav-rail-item.nav-start-highlight:hover {
       transform: translateY(-2px) scale(1.015);
-      box-shadow: 0 0 34px var(--theme-glow);
+      box-shadow: 0 0 32px var(--theme-glow);
     }
 
     /* =====================================================================
@@ -343,31 +249,29 @@
       pointer-events: auto;
       overflow: hidden;
       opacity: 0;
-      background: rgba(8, 5, 18, 0.25);
-      transition: opacity 0.45s ease, background 0.55s ease;
+      background: transparent;
+      transition: opacity 0.45s ease;
     }
 
     .rocket-launch-overlay.phase-1 {
       opacity: 1;
-      background: rgba(8, 5, 18, 0.68);
-      backdrop-filter: blur(4px);
+      background: transparent;
     }
 
     .rocket-launch-overlay.phase-2 {
       opacity: 1;
-      background: rgba(8, 5, 18, 0.78);
-      backdrop-filter: blur(6px);
+      background: transparent;
     }
 
     .rocket-launch-overlay.phase-3 {
       opacity: 1;
-      background: rgba(8, 5, 18, 0.84);
+      background: transparent;
     }
 
     .rocket-launch-overlay.phase-4 {
       opacity: 0;
-      background: rgba(255, 255, 255, 0.14);
-      transition: opacity 0.48s ease, background 0.48s ease;
+      background: transparent;
+      transition: opacity 0.48s ease;
     }
 
     .rocket-stage {
@@ -456,70 +360,56 @@
       }
     }
 
-    @keyframes streakMove {
-      0% { transform: translateX(0) skewX(-24deg); opacity: 0; }
-      20% { opacity: 0.35; }
-      80% { opacity: 0.25; }
-      100% { transform: translateX(155vw) skewX(-24deg); opacity: 0; }
-    }
-
-    #particles-canvas {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Viewport Frame & Resolution Scaling */
+    /* Viewport Frame & Resolution Scaling (Transparent Outside Glass Box) */
     .app-shell {
       position: relative;
       z-index: 2;
       min-height: 100vh;
       width: 100%;
+      background: transparent !important;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 0.85rem;
+      padding: clamp(0.65rem, 2.5vw, 1.5rem);
     }
 
     .resolution-frame {
       width: 100%;
-      max-width: 1180px;
+      max-width: 1120px;
+      background: transparent !important;
       display: flex;
       flex-direction: column;
       justify-content: center;
       transition: max-width 0.3s ease;
     }
 
-    body[data-res="1280x720"] .resolution-frame { max-width: 1160px; }
-    body[data-res="1600x900"] .resolution-frame { max-width: 1340px; }
-    body[data-res="1920x1080"] .resolution-frame { max-width: 1480px; }
+    body[data-res="1280x720"] .resolution-frame { max-width: 1120px; }
+    body[data-res="1600x900"] .resolution-frame { max-width: 1260px; }
+    body[data-res="1920x1080"] .resolution-frame { max-width: 1380px; }
 
     /* =====================================================================
-       SINGLE MASTER GLASS CONTAINER (PURPLE TINTED, MINIMAL SHADOW)
+       SINGLE MASTER COLOURED GLASS CONTAINER (20px BLUR + THEME TINT)
        ===================================================================== */
     .master-glass-container {
       position: relative;
       width: 100%;
       background: var(--master-glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(var(--master-glass-blur));
+      -webkit-backdrop-filter: blur(var(--master-glass-blur));
       border: 1px solid var(--master-glass-border);
       border-radius: var(--master-radius);
-      box-shadow: var(--master-glass-shadow), 0 0 42px var(--master-glass-glow);
-      padding: clamp(1.1rem, 2.8vw, 2.2rem);
+      box-shadow: var(--master-glass-shadow), 0 0 36px var(--master-glass-glow);
+      padding: clamp(1.15rem, 3vw, 2.35rem);
       overflow: hidden;
     }
 
-    /* Subtle Glass Reflection Sheen */
+    /* Subtle Glass Reflection Sheen Inside Glass Box */
     .master-glass-container::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(125deg, rgba(255, 255, 255, 0.08) 0%, transparent 38%, rgba(255, 255, 255, 0.02) 100%);
+      background: linear-gradient(125deg, rgba(255, 255, 255, 0.1) 0%, transparent 45%, rgba(255, 255, 255, 0.02) 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -529,7 +419,7 @@
       z-index: 1;
     }
 
-    /* Selective Mechanical Bolts for GUNDAM STYLE Theme Only */
+    /* Selective Mechanical Bolts for GUNDAM Theme Only */
     .gundam-bolts {
       display: none;
     }
@@ -543,9 +433,9 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #E2E8F0, #64748B);
-      border: 1px solid #1E293B;
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7);
+      background: linear-gradient(145deg, #F8FAFC, #64748B);
+      border: 1px solid #0F172A;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.75);
       pointer-events: none;
       z-index: 5;
     }
@@ -557,7 +447,7 @@
       left: 15%;
       right: 15%;
       height: 1.5px;
-      background: #1E293B;
+      background: #0F172A;
       transform: translateY(-50%) rotate(28deg);
     }
 
@@ -566,41 +456,41 @@
     .mech-bolt.bl { bottom: 10px; left: 10px; }
     .mech-bolt.br { bottom: 10px; right: 10px; }
 
-    /* Minimal Inline Divider (Replaces Excess Nested Boxes) */
+    /* Minimal Inline Divider */
     .section-divider {
       height: 1px;
       width: 100%;
-      background: linear-gradient(90deg, transparent, rgba(210, 180, 255, 0.25), transparent);
-      margin: 0.85rem 0;
+      background: linear-gradient(90deg, transparent, var(--master-glass-border), transparent);
+      margin: 0.75rem 0;
     }
 
     .glass-input {
-      background: rgba(16, 11, 32, 0.45);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(15, 8, 32, 0.62);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1.5px solid var(--master-glass-border);
       color: var(--text-white);
-      box-shadow: 0 0 20px var(--theme-glow);
+      box-shadow: 0 0 18px var(--theme-glow);
       transition: all 0.22s ease;
     }
 
     body[data-theme="retro"] .glass-input {
-      background: rgba(7, 27, 58, 0.6);
+      background: rgba(6, 18, 42, 0.66);
     }
 
     body[data-theme="gundam"] .glass-input {
-      background: rgba(255, 255, 255, 0.85);
-      color: #0B2B57;
+      background: rgba(17, 21, 28, 0.66);
+      color: #FFFFFF;
     }
 
     .glass-input:focus {
       outline: none;
       border-color: var(--theme-primary);
-      box-shadow: 0 0 26px var(--theme-glow);
+      box-shadow: 0 0 24px var(--theme-glow);
     }
 
     /* =====================================================================
-       FUTURISTIC MINIMAL BUTTON SYSTEM
+       MINIMAL GLASS BUTTON SYSTEM
        ===================================================================== */
     .futuristic-btn {
       position: relative;
@@ -610,10 +500,10 @@
       gap: 0.6rem;
       padding: 0.68rem 1.45rem;
       border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(210, 180, 255, 0.28);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--master-glass-border);
       color: var(--text-white);
       font-weight: 600;
       font-size: 0.85rem;
@@ -626,14 +516,18 @@
                   background 0.2s ease;
     }
 
+    body[data-theme="gundam"] .futuristic-btn {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
     body[data-theme="retro"] .futuristic-btn {
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 0.68rem;
       letter-spacing: 0.04em;
     }
 
     body[data-theme="gundam"] .futuristic-btn {
-      border-radius: 4px;
+      border-radius: 6px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
@@ -645,7 +539,7 @@
       left: 50%;
       width: 0%;
       height: 2px;
-      background: linear-gradient(90deg, var(--theme-primary), var(--accent-cyan));
+      background: linear-gradient(90deg, var(--theme-primary), var(--theme-accent-alt));
       transform: translateX(-50%);
       transition: width 0.25s ease;
       border-radius: 999px;
@@ -654,7 +548,7 @@
     .futuristic-btn:hover {
       transform: translateY(-2px) scale(1.025);
       border-color: var(--theme-primary);
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.14);
       box-shadow: 0 0 18px var(--theme-glow);
     }
 
@@ -671,17 +565,18 @@
       font-size: 0.98rem;
       letter-spacing: 0.1em;
       border-color: var(--theme-primary);
-      background: rgba(255, 79, 163, 0.16);
+      background: rgba(168, 85, 247, 0.34);
       box-shadow: 0 0 24px var(--theme-glow);
     }
 
     body[data-theme="retro"] .futuristic-btn.btn-primary-hero {
       font-size: 0.78rem;
-      background: rgba(32, 232, 138, 0.18);
+      background: rgba(56, 189, 248, 0.32);
     }
 
     body[data-theme="gundam"] .futuristic-btn.btn-primary-hero {
-      background: rgba(78, 223, 255, 0.16);
+      color: #FFFFFF;
+      background: rgba(220, 38, 38, 0.85);
     }
 
     .ripple-circle {
@@ -706,24 +601,24 @@
     .cat-qalbi {
       --cat-color: #9B5CFF;
       --cat-glow: rgba(155, 92, 255, 0.36);
-      --cat-bg: rgba(155, 92, 255, 0.14);
+      --cat-bg: rgba(155, 92, 255, 0.18);
     }
     .cat-qauli {
       --cat-color: #FF4FA3;
       --cat-glow: rgba(255, 79, 163, 0.36);
-      --cat-bg: rgba(255, 79, 163, 0.14);
+      --cat-bg: rgba(255, 79, 163, 0.18);
     }
     .cat-fili {
       --cat-color: #4EDFFF;
       --cat-glow: rgba(78, 223, 255, 0.36);
-      --cat-bg: rgba(78, 223, 255, 0.14);
+      --cat-bg: rgba(78, 223, 255, 0.18);
     }
 
     .rukun-card {
       position: relative;
-      background: rgba(16, 11, 32, 0.48);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid var(--master-glass-border);
       border-left: 3px solid var(--cat-color);
       border-radius: 14px;
@@ -732,27 +627,25 @@
       transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
                   box-shadow 0.2s ease,
                   border-color 0.2s ease;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 4px 16px rgba(8, 4, 20, 0.22);
       touch-action: none;
     }
 
     body[data-theme="gundam"] .rukun-card {
-      background: rgba(255, 255, 255, 0.82);
-    }
-
-    body[data-theme="retro"] .rukun-card {
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 6px;
     }
 
-    body[data-theme="gundam"] .rukun-card {
-      border-radius: 4px;
+    body[data-theme="retro"] .rukun-card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
     }
 
     .rukun-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.34);
+      border-color: var(--theme-primary);
       border-left-color: var(--cat-color);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24), 0 0 16px var(--cat-glow);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14), 0 0 16px var(--cat-glow);
     }
 
     .rukun-card.selected-tap {
@@ -792,8 +685,8 @@
       position: relative;
       min-height: 88px;
       border-radius: 14px;
-      background: rgba(16, 13, 37, 0.25);
-      border: 1px dashed rgba(210, 180, 255, 0.32);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed var(--master-glass-border);
       padding: 0.7rem 0.85rem;
       display: flex;
       flex-direction: column;
@@ -801,11 +694,18 @@
       transition: all 0.2s ease;
     }
 
-    body[data-theme="retro"] .answer-slot { border-radius: 6px; }
-    body[data-theme="gundam"] .answer-slot { border-radius: 4px; }
+    body[data-theme="gundam"] .answer-slot {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+    }
+
+    body[data-theme="retro"] .answer-slot {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
 
     .answer-slot.drag-over {
-      background: rgba(78, 223, 255, 0.12);
+      background: rgba(78, 223, 255, 0.14);
       border-style: solid;
       border-color: var(--accent-cyan);
       box-shadow: 0 0 20px rgba(78, 223, 255, 0.25);
@@ -813,8 +713,12 @@
 
     .answer-slot.filled {
       border-style: solid;
-      border-color: rgba(32, 232, 138, 0.45);
-      background: rgba(16, 13, 37, 0.52);
+      border-color: rgba(32, 232, 138, 0.55);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    body[data-theme="gundam"] .answer-slot.filled {
+      background: rgba(255, 255, 255, 0.1);
     }
 
     /* =====================================================================
@@ -838,12 +742,10 @@
       pointer-events: auto;
     }
 
-    /* 1. FULLSCREEN CORRECT EFFECT (NEON GREEN FUTURISTIC ENERGY) */
     .fx-correct-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at center, rgba(32, 232, 138, 0.34) 0%, rgba(16, 185, 129, 0.16) 45%, rgba(16, 13, 37, 0.55) 100%);
+      background: radial-gradient(circle at center, rgba(32, 232, 138, 0.28) 0%, rgba(16, 185, 129, 0.12) 50%, transparent 85%);
       animation: correctFlashPulse 1.3s ease-out forwards;
     }
 
@@ -869,12 +771,10 @@
       100% { transform: scale(5.5); opacity: 0; }
     }
 
-    /* 2. FULLSCREEN WRONG EFFECT (NEON RED & CRIMSON ALERT + GLITCH) */
     .fx-wrong-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at center, rgba(255, 54, 92, 0.34) 0%, rgba(127, 29, 29, 0.25) 55%, rgba(16, 13, 37, 0.65) 100%);
+      background: radial-gradient(circle at center, rgba(255, 54, 92, 0.28) 0%, rgba(185, 28, 28, 0.14) 55%, transparent 85%);
       animation: wrongWaveGlitch 1.3s ease-out forwards;
     }
 
@@ -900,12 +800,10 @@
       100% { opacity: 0; }
     }
 
-    /* 3. FULLSCREEN STREAK CELEBRATION (DARK ORANGE, CRIMSON & GOLD) */
     .fx-streak-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at center, rgba(255, 209, 102, 0.24) 0%, rgba(255, 94, 26, 0.28) 48%, rgba(120, 12, 36, 0.55) 100%);
+      background: radial-gradient(circle at center, rgba(255, 209, 102, 0.22) 0%, rgba(255, 94, 26, 0.18) 52%, transparent 85%);
       animation: streakBgAnim 1.45s ease-out forwards;
     }
 
@@ -914,7 +812,7 @@
       inset-inline: 0;
       bottom: 0;
       height: 36vh;
-      background: linear-gradient(to top, rgba(255, 94, 26, 0.45), rgba(255, 209, 102, 0.14), transparent);
+      background: linear-gradient(to top, rgba(255, 94, 26, 0.35), rgba(255, 209, 102, 0.12), transparent);
       filter: blur(12px);
       animation: flameSurge 1.45s ease-out forwards;
     }
@@ -964,11 +862,11 @@
     .holo-13 {
       font-family: var(--display-font);
       font-weight: 800;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--theme-primary), var(--accent-purple));
+      background: linear-gradient(135deg, var(--theme-accent-alt), var(--theme-primary), var(--accent-purple));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      filter: drop-shadow(0 0 22px rgba(78, 223, 255, 0.45));
+      filter: drop-shadow(0 0 18px var(--theme-glow));
       animation: holoPulse 3s ease-in-out infinite;
     }
 
@@ -1004,8 +902,12 @@
       appearance: none;
       height: 6px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.18);
       outline: none;
+    }
+
+    body[data-theme="gundam"] input[type="range"].neon-slider {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     input[type="range"].neon-slider::-webkit-slider-thumb {
@@ -1043,25 +945,13 @@
   </style>
 </head>
 <body data-theme="futuristic" data-res="auto">
-  <!-- Ambient Gradient Mesh & Light Streaks -->
-  <div class="ambient-backdrop" aria-hidden="true">
-    <div class="cosmic-nebula"></div>
-    <div class="light-beam beam-left"></div>
-    <div class="light-beam beam-right"></div>
-    <div class="light-streak streak-1"></div>
-    <div class="light-streak streak-2"></div>
-  </div>
-
-  <!-- Floating Particles Canvas -->
-  <canvas id="particles-canvas"></canvas>
-
   <!-- Fullscreen Animation Overlay System (Correct, Wrong, Streak) -->
   <div id="fullscreen-fx-overlay" class="fullscreen-fx-overlay" aria-live="assertive"></div>
 
-  <!-- Main Application Shell -->
+  <!-- Main Application Shell (100% Transparent Outside Master Glass Box) -->
   <main id="app-shell" class="app-shell">
     <div id="resolution-frame" class="resolution-frame">
-      <!-- Single Master Purple-Tinted Glass Container -->
+      <!-- Single Master Theme-Tinted Transparent Glass Container -->
       <div id="master-glass" class="master-glass-container">
         <!-- Selective Mechanical Screws (Shown in Gundam Theme) -->
         <div class="gundam-bolts" aria-hidden="true">
@@ -1077,7 +967,7 @@
   </main>
 
   <!-- Quit Confirmation Modal -->
-  <div id="quit-modal" class="fixed inset-0 z-[140] hidden items-center justify-center bg-black/55 backdrop-blur-md p-4">
+  <div id="quit-modal" class="fixed inset-0 z-[140] hidden items-center justify-center backdrop-blur-md p-4">
     <div class="master-glass-container max-w-md w-full p-7 text-center">
       <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center bg-pink-500/15 border border-pink-400/40 text-pink-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1085,7 +975,7 @@
         </svg>
       </div>
       <h3 class="font-display text-lg sm:text-xl font-bold tracking-wider uppercase mb-2">ARE YOU SURE YOU WANT TO EXIT?</h3>
-      <p class="text-sm text-[#D7D2E2] mb-6">Kemajuan &amp; XP anda akan disimpan sebelum kembali ke halaman utama.</p>
+      <p class="text-sm opacity-85 mb-6">Kemajuan &amp; XP anda akan disimpan sebelum kembali ke halaman utama.</p>
       <div class="flex flex-wrap items-center justify-center gap-3">
         <button id="btn-back-to-game" class="futuristic-btn" type="button">BACK TO GAME</button>
         <button id="btn-confirm-exit" class="futuristic-btn btn-primary-hero" type="button">EXIT</button>
@@ -1158,7 +1048,6 @@
 
       getTargetVolume() {
         if (this.isMuted) return 0;
-        // Very soft ambient level: 2% default maps to 0.02 (and gently capped for comfort)
         const normalized = Math.max(0, Math.min(100, Number(this.volumePercent) || 0)) / 100;
         return Math.max(0, Math.min(1, normalized * 0.5));
       }
@@ -1465,7 +1354,6 @@
 
     const sfxManager = new SoundEffectsManager();
 
-    // Unified facade keeping sound effects calls intact while routing music solely to bgmManager
     const audio = {
       startAmbientMusic: () => bgmManager.startOnFirstInteraction(6.5),
       stopAmbientMusic: (reset = false) => bgmManager.stopWithFadeOut(1.6, reset),
@@ -1749,7 +1637,7 @@
     }
 
     /* =====================================================================
-       5. THEME, RESOLUTION & PARTICLES ENGINE
+       5. THEME & RESOLUTION ENGINE (GLASS BOX ONLY, BACKGROUND TRANSPARENT)
        ===================================================================== */
     function applyThemeAndSettings() {
       const normalizedTheme = appState.theme === 'neon-pink'
@@ -1766,11 +1654,6 @@
       audio.setSfxPercent(appState.settings.sfxVolume);
       audio.setMusicPercent(appState.settings.musicVolume);
       audio.setMuted(appState.settings.muted);
-
-      const canvas = document.getElementById('particles-canvas');
-      if (canvas) {
-        canvas.style.opacity = appState.settings.particles ? '1' : '0';
-      }
       saveState();
     }
 
@@ -1781,52 +1664,6 @@
         document.exitFullscreen?.().catch(() => {});
       }
     }
-
-    const particlesCanvas = document.getElementById('particles-canvas');
-    const pCtx = particlesCanvas.getContext('2d');
-    let particlesList = [];
-
-    function initParticles() {
-      particlesCanvas.width = window.innerWidth;
-      particlesCanvas.height = window.innerHeight;
-      const count = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 23000));
-      const palette = ['#9B5CFF', '#FF4FA3', '#4EDFFF', '#20E88A', '#FFD166'];
-      particlesList = Array.from({ length: Math.max(22, count) }, () => ({
-        x: Math.random() * particlesCanvas.width,
-        y: Math.random() * particlesCanvas.height,
-        r: Math.random() * 2.1 + 0.6,
-        vx: (Math.random() - 0.5) * 0.32,
-        vy: -Math.random() * 0.42 - 0.1,
-        alpha: Math.random() * 0.5 + 0.15,
-        color: palette[Math.floor(Math.random() * palette.length)]
-      }));
-    }
-
-    function renderParticles() {
-      if (appState.settings.particles && appState.settings.animations) {
-        pCtx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
-        for (const pt of particlesList) {
-          pt.x += pt.vx;
-          pt.y += pt.vy;
-          if (pt.y < -10) {
-            pt.y = particlesCanvas.height + 10;
-            pt.x = Math.random() * particlesCanvas.width;
-          }
-          if (pt.x < -10) pt.x = particlesCanvas.width + 10;
-          if (pt.x > particlesCanvas.width + 10) pt.x = -10;
-
-          pCtx.beginPath();
-          pCtx.arc(pt.x, pt.y, pt.r, 0, Math.PI * 2);
-          pCtx.fillStyle = pt.color;
-          pCtx.globalAlpha = pt.alpha;
-          pCtx.fill();
-        }
-        pCtx.globalAlpha = 1;
-      }
-      requestAnimationFrame(renderParticles);
-    }
-
-    window.addEventListener('resize', initParticles);
 
     function launchConfetti() {
       if (!appState.settings.animations) return;
@@ -1889,25 +1726,25 @@
       container.innerHTML = `
         <section class="w-full min-h-[380px] sm:min-h-[440px] flex flex-col items-center justify-center text-center py-6">
           <div class="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center mb-4">
-            <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[#B89AFF]/45"></div>
-            <div class="holo-ring-inner absolute inset-4 rounded-full border border-[#50DCFF]/45"></div>
+            <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/60"></div>
+            <div class="holo-ring-inner absolute inset-4 rounded-full border border-[var(--theme-accent-alt)]/60"></div>
             <div class="flex flex-col items-center justify-center z-10">
-              <span class="text-[10px] uppercase tracking-[0.3em] text-[#50DCFF] font-bold">RUKUN</span>
+              <span class="text-[10px] uppercase tracking-[0.3em] text-[var(--theme-accent-alt)] font-bold">RUKUN</span>
               <span class="holo-13 text-5xl sm:text-6xl leading-none">13</span>
             </div>
           </div>
 
-          <p class="font-display text-xs sm:text-sm font-extrabold tracking-[0.32em] uppercase text-[#B89AFF] mb-1">
+          <p class="font-display text-xs sm:text-sm font-extrabold tracking-[0.32em] uppercase text-[var(--text-soft)] mb-1">
             SOLAT QUEST
           </p>
-          <p class="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-[#D7D2E2] mb-5">
+          <p class="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase opacity-85 mb-5">
             PREPARING YOUR ADVENTURE...
           </p>
 
-          <div class="w-full max-w-xs h-2 rounded-full bg-white/10 overflow-hidden border border-white/15">
+          <div class="w-full max-w-xs h-2 rounded-full bg-white/15 overflow-hidden border border-current/20">
             <div id="loading-progress-bar" class="h-full w-0 rounded-full bg-gradient-to-r from-[#9B5CFF] via-[#FF4FA3] to-[#50DCFF] shadow-[0_0_16px_rgba(255,79,163,0.65)] transition-[width] duration-75"></div>
           </div>
-          <span id="loading-pct" class="mt-2 font-display text-xs font-bold text-[#50DCFF]">0%</span>
+          <span id="loading-pct" class="mt-2 font-display text-xs font-bold text-[var(--theme-accent-alt)]">0%</span>
         </section>
       `;
 
@@ -1952,8 +1789,8 @@
       container.innerHTML = `
         <section class="w-full min-h-[420px] sm:min-h-[480px] flex flex-col items-center justify-center text-center py-6 px-2">
           <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center mb-4">
-            <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/50"></div>
-            <div class="holo-ring-inner absolute inset-3 rounded-full border border-[var(--theme-accent-alt)]/50"></div>
+            <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/60"></div>
+            <div class="holo-ring-inner absolute inset-3 rounded-full border border-[var(--theme-accent-alt)]/60"></div>
             <div class="flex flex-col items-center justify-center z-10">
               <span class="text-[9px] uppercase tracking-[0.26em] text-[var(--theme-accent-alt)] font-bold">RUKUN</span>
               <span class="holo-13 text-3xl sm:text-4xl leading-none">13</span>
@@ -2051,10 +1888,10 @@
             </div>
 
             <div class="flex items-center gap-2.5">
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-current/20 font-semibold">
+              <span class="px-3 py-1 rounded-full bg-white/10 border border-current/20 font-semibold">
                 LEVEL <strong class="text-[var(--theme-accent-alt)]">${lv}</strong>
               </span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-current/20 font-semibold">
+              <span class="px-3 py-1 rounded-full bg-white/10 border border-current/20 font-semibold">
                 XP <strong class="text-[var(--theme-primary)]">${appState.xp}</strong>
               </span>
             </div>
@@ -2063,8 +1900,8 @@
           <!-- Center Focal Zone: SOLAT QUEST Logo & Holographic 13 -->
           <div class="flex flex-col items-center justify-center text-center my-4">
             <div class="menu-stagger-2 relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center mb-3">
-              <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/50"></div>
-              <div class="holo-ring-inner absolute inset-3.5 rounded-full border border-[var(--theme-accent-alt)]/50"></div>
+              <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/60"></div>
+              <div class="holo-ring-inner absolute inset-3.5 rounded-full border border-[var(--theme-accent-alt)]/60"></div>
               <div class="flex flex-col items-center justify-center z-10">
                 <span class="text-[10px] uppercase tracking-[0.28em] text-[var(--theme-accent-alt)] font-bold">RUKUN</span>
                 <span class="holo-13 text-5xl sm:text-6xl leading-none">13</span>
@@ -2078,37 +1915,39 @@
               THE 13 RUKUN CHALLENGE
             </p>
 
-            <!-- Centered & Balanced 6-Button Grid -->
-            <nav aria-label="Main Menu Navigation" class="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              <button id="menu-start" type="button" class="menu-stagger-2 nav-rail-item nav-start-highlight sm:col-span-2 lg:col-span-3 justify-center gap-3 font-display font-extrabold tracking-wider text-sm sm:text-base">
+            <!-- Centered & Balanced Navigation -->
+            <nav aria-label="Main Menu Navigation" class="w-full max-w-2xl flex flex-col gap-3">
+              <button id="menu-start" type="button" class="menu-stagger-2 nav-rail-item nav-start-highlight justify-center gap-3 font-display font-extrabold tracking-wider text-sm sm:text-base">
                 <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 <span>START</span>
               </button>
 
-              <button id="menu-revision" type="button" class="menu-stagger-3 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
-                <svg class="w-4 h-4 text-[var(--theme-accent-alt)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                <span>ULANG KAJI</span>
-              </button>
+              <div class="grid grid-cols-2 gap-3 w-full">
+                <button id="menu-revision" type="button" class="menu-stagger-3 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
+                  <svg class="w-4 h-4 text-[var(--theme-accent-alt)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  <span>ULANG KAJI</span>
+                </button>
 
-              <button id="menu-leaderboard" type="button" class="menu-stagger-4 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
-                <svg class="w-4 h-4 text-[#FFD166]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                <span>LEADERBOARD</span>
-              </button>
+                <button id="menu-leaderboard" type="button" class="menu-stagger-4 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
+                  <svg class="w-4 h-4 text-[#FFD166]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                  <span>LEADERBOARD</span>
+                </button>
 
-              <button id="menu-settings" type="button" class="menu-stagger-5 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
-                <svg class="w-4 h-4 text-[var(--theme-primary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-                <span>SETTING</span>
-              </button>
+                <button id="menu-settings" type="button" class="menu-stagger-5 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
+                  <svg class="w-4 h-4 text-[var(--theme-primary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                  <span>SETTING</span>
+                </button>
 
-              <button id="menu-theme" type="button" class="menu-stagger-6 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
-                <svg class="w-4 h-4 text-[var(--theme-accent-alt)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-                <span>THEME</span>
-              </button>
+                <button id="menu-theme" type="button" class="menu-stagger-6 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider">
+                  <svg class="w-4 h-4 text-[var(--theme-accent-alt)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                  <span>THEME</span>
+                </button>
 
-              <button id="menu-quit" type="button" class="menu-stagger-6 nav-rail-item justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider hover:text-[#FF365C]">
-                <svg class="w-4 h-4 text-[#FF365C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h5a2 2 0 012 2v1"/></svg>
-                <span>QUIT</span>
-              </button>
+                <button id="menu-quit" type="button" class="menu-stagger-6 nav-rail-item col-span-2 justify-center gap-2.5 text-xs sm:text-sm font-semibold tracking-wider hover:text-[#FF365C]">
+                  <svg class="w-4 h-4 text-[#FF365C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h5a2 2 0 012 2v1"/></svg>
+                  <span>QUIT</span>
+                </button>
+              </div>
             </nav>
           </div>
 
@@ -2117,29 +1956,6 @@
           </footer>
         </section>
       `;
-
-      // Arrange the 5 secondary menu buttons into 2 rows of 2 + 1 full-span 5th button
-      const mainNav = container.querySelector('nav[aria-label="Main Menu Navigation"]');
-      const startBtnEl = document.getElementById('menu-start');
-      const secondaryIds = ['menu-revision', 'menu-leaderboard', 'menu-settings', 'menu-theme', 'menu-quit'];
-      if (mainNav && startBtnEl) {
-        mainNav.className = 'w-full max-w-2xl flex flex-col gap-3';
-        startBtnEl.className = 'menu-stagger-2 nav-rail-item nav-start-highlight justify-center gap-3 font-display font-extrabold tracking-wider text-sm sm:text-base';
-
-        const gridWrap = document.createElement('div');
-        gridWrap.className = 'grid grid-cols-2 gap-3 w-full';
-
-        secondaryIds.forEach((id, idx) => {
-          const el = document.getElementById(id);
-          if (!el) return;
-          if (idx === secondaryIds.length - 1) {
-            el.classList.add('col-span-2');
-          }
-          gridWrap.appendChild(el);
-        });
-
-        mainNav.appendChild(gridWrap);
-      }
 
       document.getElementById('menu-start')?.addEventListener('click', (e) => {
         const startBtn = e.currentTarget;
@@ -2166,19 +1982,19 @@
       if (theme === 'retro') {
         return `
           <div class="rocket-ignition-shake flex flex-col items-center">
-            <svg viewBox="0 0 96 128" class="w-24 h-32 sm:w-28 sm:h-36 drop-shadow-[0_0_22px_rgba(53,167,255,0.75)]" shape-rendering="crispEdges">
-              <rect x="40" y="8" width="16" height="12" fill="#8BE4FF"/>
-              <rect x="32" y="20" width="32" height="16" fill="#35A7FF"/>
-              <rect x="24" y="36" width="48" height="44" fill="#1464D2" stroke="#8BE4FF" stroke-width="4"/>
-              <rect x="40" y="46" width="16" height="16" fill="#071B3A" stroke="#F2C94C" stroke-width="3"/>
-              <rect x="12" y="56" width="12" height="28" fill="#35A7FF"/>
-              <rect x="72" y="56" width="12" height="28" fill="#35A7FF"/>
+            <svg viewBox="0 0 96 128" class="w-24 h-32 sm:w-28 sm:h-36 drop-shadow-[0_0_22px_rgba(59,130,246,0.75)]" shape-rendering="crispEdges">
+              <rect x="40" y="8" width="16" height="12" fill="#93C5FD"/>
+              <rect x="32" y="20" width="32" height="16" fill="#60A5FA"/>
+              <rect x="24" y="36" width="48" height="44" fill="#1464D2" stroke="#93C5FD" stroke-width="4"/>
+              <rect x="40" y="46" width="16" height="16" fill="#0F172A" stroke="#F2C94C" stroke-width="3"/>
+              <rect x="12" y="56" width="12" height="28" fill="#60A5FA"/>
+              <rect x="72" y="56" width="12" height="28" fill="#60A5FA"/>
               <rect x="32" y="80" width="32" height="12" fill="#F2C94C"/>
             </svg>
-            <div class="rocket-plume" style="background:linear-gradient(to bottom,#F2C94C,#35A7FF,transparent);"></div>
-            <div class="rocket-exhaust-trail" style="background:linear-gradient(to bottom,rgba(53,167,255,0.75),rgba(139,228,255,0.2),transparent);"></div>
+            <div class="rocket-plume" style="background:linear-gradient(to bottom,#F2C94C,#60A5FA,transparent);"></div>
+            <div class="rocket-exhaust-trail" style="background:linear-gradient(to bottom,rgba(59,130,246,0.75),rgba(147,197,253,0.2),transparent);"></div>
           </div>
-          <div class="mt-4 px-3 py-1 border border-[#8BE4FF]/60 bg-[#071B3A]/85 font-display text-[10px] sm:text-xs tracking-[0.22em] text-[#8BE4FF]">
+          <div class="mt-4 px-3 py-1 border border-[#93C5FD]/60 bg-[#1464D2]/75 backdrop-blur-md font-display text-[10px] sm:text-xs tracking-[0.22em] text-white">
             [ RETRO ARCADE THRUSTER ]
           </div>
         `;
@@ -2198,25 +2014,24 @@
             <div class="rocket-plume" style="background:linear-gradient(to bottom,#F2C94C,#D62835,#164B9A,transparent);"></div>
             <div class="rocket-exhaust-trail" style="background:linear-gradient(to bottom,rgba(214,40,53,0.7),rgba(22,75,154,0.25),transparent);"></div>
           </div>
-          <div class="mt-4 px-3.5 py-1 rounded border border-[#164B9A] bg-[#F4F5F7]/90 text-[#0B2B57] font-display text-xs font-bold tracking-[0.2em]">
+          <div class="mt-4 px-3.5 py-1 rounded border border-[#164B9A] bg-white/75 backdrop-blur-md text-[#0B2B57] font-display text-xs font-bold tracking-[0.2em]">
             SYS.HUD // LAUNCH SEQUENCE READY
           </div>
         `;
       }
 
-      // Default: Futuristic Purple / Neon Pink / Cyan
       return `
         <div class="rocket-ignition-shake flex flex-col items-center">
           <svg viewBox="0 0 112 144" class="w-28 h-36 sm:w-32 sm:h-40 drop-shadow-[0_0_26px_rgba(155,92,255,0.75)]">
             <defs>
               <linearGradient id="futuristicHull" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stop-color="#FFFFFF"/>
-                <stop offset="55%" stop-color="#E2D9F8"/>
+                <stop offset="55%" stop-color="#E9D5FF"/>
                 <stop offset="100%" stop-color="#9B5CFF"/>
               </linearGradient>
             </defs>
             <path d="M56 8 C74 28, 78 56, 76 92 L36 92 C34 56, 38 28, 56 8 Z" fill="url(#futuristicHull)" stroke="#50DCFF" stroke-width="2.2"/>
-            <circle cx="56" cy="54" r="10" fill="#100B20" stroke="#FF4FA3" stroke-width="2.5"/>
+            <circle cx="56" cy="54" r="10" fill="#2E1065" stroke="#FF4FA3" stroke-width="2.5"/>
             <path d="M36 68 L14 96 L36 92 Z" fill="#9B5CFF" stroke="#FF4FA3" stroke-width="1.8"/>
             <path d="M76 68 L98 96 L76 92 Z" fill="#9B5CFF" stroke="#FF4FA3" stroke-width="1.8"/>
             <rect x="44" y="92" width="24" height="8" rx="2" fill="#50DCFF"/>
@@ -2252,7 +2067,7 @@
       overlay.innerHTML = `
         <div class="rocket-stage flex flex-col items-center justify-center">
           ${buildThemeRocketMarkup(appState.theme)}
-          <p id="rocket-status-text" class="mt-4 font-display text-xs sm:text-base font-extrabold tracking-[0.28em] uppercase text-white drop-shadow-[0_0_14px_var(--theme-glow)]">
+          <p id="rocket-status-text" class="mt-4 px-3 py-1 rounded-full bg-black/25 backdrop-blur-md font-display text-xs sm:text-base font-extrabold tracking-[0.28em] uppercase text-white">
             PREPARING MISSION...
           </p>
         </div>
@@ -2265,7 +2080,6 @@
 
       const statusEl = overlay.querySelector('#rocket-status-text');
 
-      // Phase 2: Rocket appears at center
       setTimeout(() => {
         overlay.classList.remove('phase-1');
         overlay.classList.add('phase-2');
@@ -2273,7 +2087,6 @@
         audio.playTone('transition');
       }, 460);
 
-      // Phase 3: Thruster ignition & rapid lift-off
       setTimeout(() => {
         overlay.classList.remove('phase-2');
         overlay.classList.add('phase-3');
@@ -2281,7 +2094,6 @@
         audio.playTone('streak', 3);
       }, 1520);
 
-      // Phase 4: Soft warp transition & enter Level 1
       setTimeout(() => {
         overlay.classList.remove('phase-3');
         overlay.classList.add('phase-4');
@@ -2361,12 +2173,12 @@
           <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
             <div class="flex items-center gap-2.5">
               <button id="btn-game-menu" type="button" class="futuristic-btn py-1 px-3 text-xs">← Menu</button>
-              <span class="font-display font-bold tracking-wider text-cyan-300">${lvl.code}</span>
-              <span class="text-white/70">Progress: <strong>${totalPlaced}/${lvl.items.length}</strong></span>
+              <span class="font-display font-bold tracking-wider text-[var(--theme-accent-alt)]">${lvl.code}</span>
+              <span class="opacity-80">Progress: <strong>${totalPlaced}/${lvl.items.length}</strong></span>
             </div>
 
             <div class="flex items-center gap-3 font-semibold">
-              <span>SCORE <strong class="text-white">${gameSession.score}</strong></span>
+              <span>SCORE <strong>${gameSession.score}</strong></span>
               <span>XP <strong class="text-[var(--theme-primary)]">${appState.xp}</strong></span>
               <span class="text-[#FFD166]">🔥 x${gameSession.streak}</span>
               <button id="btn-hint" type="button" class="futuristic-btn py-1 px-3 text-xs" ${round.hintsUsed >= lvl.hintLimit ? 'disabled style="opacity:0.45;cursor:not-allowed;"' : ''}>
@@ -2378,22 +2190,22 @@
           <!-- Level Title -->
           <div class="flex flex-wrap items-baseline justify-between gap-2">
             <div>
-              <h2 class="font-display text-lg sm:text-xl font-bold text-white">${lvl.title}</h2>
-              <p class="text-xs text-[#D7D2E2]">${lvl.subtitle}</p>
+              <h2 class="font-display text-lg sm:text-xl font-bold">${lvl.title}</h2>
+              <p class="text-xs text-[var(--text-soft)]">${lvl.subtitle}</p>
             </div>
-            <span class="text-[11px] text-white/60">Tap kad &amp; slot atau drag-and-drop</span>
+            <span class="text-[11px] opacity-70">Tap kad &amp; slot atau drag-and-drop</span>
           </div>
 
           ${round.activeHint ? `
-            <div class="py-2 px-3.5 rounded-xl bg-white/[0.04] border border-amber-300/40 flex items-center justify-between text-xs">
+            <div class="py-2 px-3.5 rounded-xl bg-white/[0.08] border border-amber-300/45 flex items-center justify-between text-xs">
               <div class="flex items-center gap-2">
                 <span class="category-pill ${CATEGORY_META[round.activeHint.category].cssClass}">
                   ${CATEGORY_META[round.activeHint.category].iconSvg}
                   <span>${CATEGORY_META[round.activeHint.category].label}</span>
                 </span>
-                <span class="text-white font-medium">${round.activeHint.text}</span>
+                <span class="font-medium">${round.activeHint.text}</span>
               </div>
-              <button id="btn-close-hint" type="button" class="text-white/70 hover:text-white font-bold">✕</button>
+              <button id="btn-close-hint" type="button" class="opacity-75 hover:opacity-100 font-bold">✕</button>
             </div>
           ` : ''}
 
@@ -2401,7 +2213,7 @@
 
           <!-- Middle: Answer Slots -->
           <div>
-            <div class="text-[11px] uppercase tracking-[0.2em] text-cyan-300 font-bold mb-2">
+            <div class="text-[11px] uppercase tracking-[0.2em] text-[var(--theme-accent-alt)] font-bold mb-2">
               RUANG SUSUNAN JAWAPAN
             </div>
             <div class="grid ${gridClass} gap-2.5">
@@ -2414,17 +2226,17 @@
                         <span class="text-[11px] font-extrabold text-[#20E88A]">#${idx + 1} ✓</span>
                         <span class="category-pill ${cat.cssClass}">${cat.iconSvg}<span>${cat.label}</span></span>
                       </div>
-                      <div class="text-xs sm:text-sm font-bold text-white leading-snug">${escapeHtml(placedItem.name)}</div>
+                      <div class="text-xs sm:text-sm font-bold leading-snug">${escapeHtml(placedItem.name)}</div>
                     </div>
                   `;
                 }
                 return `
                   <div data-slot-index="${idx}" class="answer-slot" role="button" tabindex="0">
                     <div class="flex items-center justify-between">
-                      <span class="text-xs font-bold text-white/70">URUTAN #${idx + 1}</span>
-                      <span class="text-[10px] uppercase text-white/40">Slot</span>
+                      <span class="text-xs font-bold opacity-80">URUTAN #${idx + 1}</span>
+                      <span class="text-[10px] uppercase opacity-50">Slot</span>
                     </div>
-                    <div class="text-xs text-white/40 pt-1">
+                    <div class="text-xs opacity-55 pt-1">
                       ${round.selectedCardId ? 'Tap untuk letak' : 'Letakkan kad rukun'}
                     </div>
                   </div>
@@ -2458,7 +2270,7 @@
                       </span>
                       <span class="w-2 h-2 rounded-full" style="background:${cat.color};box-shadow:0 0 8px ${cat.color};"></span>
                     </div>
-                    <div class="text-xs sm:text-sm font-bold text-white leading-snug">
+                    <div class="text-xs sm:text-sm font-bold leading-snug">
                       ${escapeHtml(item.name)}
                     </div>
                   </div>
@@ -2638,15 +2450,15 @@
 
       container.innerHTML = `
         <section class="max-w-xl mx-auto py-6 text-center">
-          <p class="text-xs uppercase tracking-[0.3em] text-cyan-300 font-bold mb-2">CABARAN SELESAI</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-2">
+          <p class="text-xs uppercase tracking-[0.3em] text-[var(--theme-accent-alt)] font-bold mb-2">CABARAN SELESAI</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold mb-2">
             LEVEL ${stat.level} COMPLETED!
           </h2>
-          <p class="text-sm text-[#D7D2E2] mb-4">Hebat! Anda berjaya menamatkan cabaran ini.</p>
+          <p class="text-sm text-[var(--text-soft)] mb-4">Hebat! Anda berjaya menamatkan cabaran ini.</p>
           <div class="text-3xl tracking-widest text-[#FFD166] mb-5">${stars}</div>
           <div class="flex justify-center gap-8 mb-5 text-sm">
-            <div><span class="text-[#D7D2E2]">Score:</span> <strong class="text-white text-lg">${gameSession.score}</strong></div>
-            <div><span class="text-[#D7D2E2]">Accuracy:</span> <strong class="text-cyan-300 text-lg">${stat.accuracy}%</strong></div>
+            <div><span class="text-[var(--text-soft)]">Score:</span> <strong class="text-lg">${gameSession.score}</strong></div>
+            <div><span class="text-[var(--text-soft)]">Accuracy:</span> <strong class="text-[var(--theme-accent-alt)] text-lg">${stat.accuracy}%</strong></div>
           </div>
           <p class="text-xs font-semibold text-[#20E88A] mb-6">${stat.bonusNote}</p>
           <button id="btn-next-level" type="button" class="futuristic-btn btn-primary-hero">
@@ -2674,26 +2486,26 @@
           <span class="inline-block px-3.5 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase bg-amber-400/15 border border-[#FFD166] text-[#FFD166] mb-3">
             13 RUKUN SOLAT MASTERED
           </span>
-          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-2">
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold mb-2">
             TAHNIAH, ${escapeHtml((appState.playerName || 'PEJUANG').toUpperCase())}!
           </h2>
-          <p class="text-sm text-[#D7D2E2] mb-6">Anda telah menamatkan kesemua 3 Level Cabaran 13 Rukun Solat.</p>
+          <p class="text-sm text-[var(--text-soft)] mb-6">Anda telah menamatkan kesemua 3 Level Cabaran 13 Rukun Solat.</p>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-7 text-center">
-            <div class="p-3 rounded-xl bg-white/[0.04] border border-white/15">
-              <div class="text-[10px] uppercase text-[#D7D2E2]">Total Score</div>
-              <div class="font-display text-xl font-extrabold text-white">${gameSession.score}</div>
+            <div class="p-3 rounded-xl bg-white/[0.08] border border-current/15">
+              <div class="text-[10px] uppercase text-[var(--text-soft)]">Total Score</div>
+              <div class="font-display text-xl font-extrabold">${gameSession.score}</div>
             </div>
-            <div class="p-3 rounded-xl bg-white/[0.04] border border-white/15">
-              <div class="text-[10px] uppercase text-[#D7D2E2]">Total XP</div>
+            <div class="p-3 rounded-xl bg-white/[0.08] border border-current/15">
+              <div class="text-[10px] uppercase text-[var(--text-soft)]">Total XP</div>
               <div class="font-display text-xl font-extrabold text-[var(--theme-primary)]">${appState.xp}</div>
             </div>
-            <div class="p-3 rounded-xl bg-white/[0.04] border border-white/15">
-              <div class="text-[10px] uppercase text-[#D7D2E2]">Accuracy</div>
-              <div class="font-display text-xl font-extrabold text-cyan-300">${accuracy}%</div>
+            <div class="p-3 rounded-xl bg-white/[0.08] border border-current/15">
+              <div class="text-[10px] uppercase text-[var(--text-soft)]">Accuracy</div>
+              <div class="font-display text-xl font-extrabold text-[var(--theme-accent-alt)]">${accuracy}%</div>
             </div>
-            <div class="p-3 rounded-xl bg-white/[0.04] border border-white/15">
-              <div class="text-[10px] uppercase text-[#D7D2E2]">Highest Streak</div>
+            <div class="p-3 rounded-xl bg-white/[0.08] border border-current/15">
+              <div class="text-[10px] uppercase text-[var(--text-soft)]">Highest Streak</div>
               <div class="font-display text-xl font-extrabold text-[#FFD166]">🔥 x${gameSession.highestStreak}</div>
             </div>
           </div>
@@ -2713,7 +2525,7 @@
     }
 
     /* ---------------------------------------------------------------------
-       7. ULANG KAJI – ANATOMICAL HUMAN HOLOGRAM EXPLORER (NOT STICK FIGURE)
+       7. ULANG KAJI – ANATOMICAL HUMAN HOLOGRAM EXPLORER
        --------------------------------------------------------------------- */
     const REVISION_CATEGORIES = {
       QALBI: {
@@ -2755,10 +2567,10 @@
         <section class="w-full flex flex-col gap-3">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <span class="text-[11px] uppercase tracking-[0.28em] text-cyan-300 font-bold">
+              <span class="text-[11px] uppercase tracking-[0.28em] text-[var(--theme-accent-alt)] font-bold">
                 HUMAN HOLOGRAM EXPLORER
               </span>
-              <h2 class="font-display text-xl sm:text-3xl font-extrabold text-white">
+              <h2 class="font-display text-xl sm:text-3xl font-extrabold">
                 ULANG KAJI – 13 RUKUN SOLAT
               </h2>
             </div>
@@ -2768,9 +2580,9 @@
           <div class="section-divider"></div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
-            <!-- Large Anatomical Human Hologram (65-75% Viewport Height, Zero Clipping) -->
+            <!-- Large Anatomical Human Hologram -->
             <div class="lg:col-span-6 relative flex flex-col items-center justify-center">
-              <div class="relative w-full max-w-[340px] h-[64vh] max-h-[460px] min-h-[300px] flex items-center justify-center rounded-2xl border border-purple-300/25 bg-[#100D25]/35 overflow-hidden">
+              <div class="relative w-full max-w-[340px] h-[64vh] max-h-[460px] min-h-[300px] flex items-center justify-center rounded-2xl border border-current/25 bg-white/[0.04] overflow-hidden">
                 <div class="scan-line-anim absolute inset-x-0 h-10 bg-gradient-to-b from-transparent via-cyan-300/25 to-transparent pointer-events-none z-10"></div>
 
                 <svg viewBox="0 0 280 440" class="w-full h-full hologram-body-idle z-20" aria-label="Model Hologram Anatomi Manusia">
@@ -2782,10 +2594,8 @@
                     </linearGradient>
                   </defs>
 
-                  <!-- Floor Hologram Pedestal -->
                   <ellipse cx="140" cy="422" rx="84" ry="12" fill="rgba(78,223,255,0.08)" stroke="#4EDFFF" stroke-opacity="0.45"/>
 
-                  <!-- FI'LI ZONE: Full Anatomical Body Silhouette -->
                   <g class="cursor-pointer" data-svg-zone="FILI" opacity="${selectedBodyZone === 'FILI' ? '1' : '0.82'}">
                     <path d="M126 76 L154 76 L158 96 L122 96 Z"
                           fill="${selectedBodyZone === 'FILI' ? 'rgba(78,223,255,0.22)' : 'url(#holoMeshGrad)'}"
@@ -2802,7 +2612,7 @@
                           fill="${selectedBodyZone === 'FILI' ? 'rgba(78,223,255,0.24)' : 'url(#holoMeshGrad)'}"
                           stroke="#4EDFFF" stroke-width="${selectedBodyZone === 'FILI' ? '2.8' : '1.7'}"/>
 
-                    <path d="M92 126 Q140 140 188 126" fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-dasharray="3 3"/>
+                    <path d="M92 126 Q140 140 188 126" fill="none" stroke="currentColor" stroke-opacity="0.22" stroke-dasharray="3 3"/>
                     <path d="M98 184 Q140 194 182 184" fill="none" stroke="#4EDFFF" stroke-opacity="0.35"/>
 
                     <path d="M72 124 L52 192 L46 254 L56 274 L68 272 L66 250 L74 196 L86 142 Z"
@@ -2822,7 +2632,6 @@
                           stroke="#4EDFFF" stroke-width="${selectedBodyZone === 'FILI' ? '2.5' : '1.5'}"/>
                   </g>
 
-                  <!-- QALBI ZONE: Anatomical Head & Heart Core -->
                   <g class="cursor-pointer" data-svg-zone="QALBI">
                     <path d="M140 16 C116 16, 106 34, 108 56 C110 70, 122 80, 140 80 C158 80, 170 70, 172 56 C174 34, 164 16, 140 16 Z"
                           fill="${selectedBodyZone === 'QALBI' ? 'rgba(155,92,255,0.34)' : 'rgba(155,92,255,0.12)'}"
@@ -2832,7 +2641,6 @@
                           opacity="${selectedBodyZone === 'QALBI' ? '1' : '0.65'}"/>
                   </g>
 
-                  <!-- QAULI ZONE: Mouth & Speech Resonance -->
                   <g class="cursor-pointer" data-svg-zone="QAULI">
                     <ellipse cx="140" cy="64" rx="11" ry="5"
                              fill="${selectedBodyZone === 'QAULI' ? 'rgba(255,79,163,0.45)' : 'rgba(255,79,163,0.18)'}"
@@ -2867,21 +2675,21 @@
                   ${activeZone.meta.iconSvg}
                   <span>${activeZone.meta.label}</span>
                 </span>
-                <span class="text-xs font-bold text-white/75">${activeZone.items.length} Rukun</span>
+                <span class="text-xs font-bold opacity-80">${activeZone.items.length} Rukun</span>
               </div>
 
-              <h3 class="font-display text-xl sm:text-2xl font-extrabold text-white mb-1">
+              <h3 class="font-display text-xl sm:text-2xl font-extrabold mb-1">
                 ${activeZone.meta.bodyRegion}
               </h3>
-              <p class="text-xs sm:text-sm text-[#D7D2E2] mb-4">
+              <p class="text-xs sm:text-sm text-[var(--text-soft)] mb-4">
                 ${activeZone.meta.bodyDesc}
               </p>
 
               <div class="space-y-2 max-h-[310px] overflow-y-auto no-scrollbar pr-1">
                 ${activeZone.items.map((rukunName, idx) => `
-                  <div class="p-3 rounded-xl bg-[#100D25]/35 border border-white/10 flex items-center gap-3" style="border-left: 3px solid ${activeZone.meta.color};">
-                    <span class="font-display text-xs font-extrabold text-white/70">${idx + 1}.</span>
-                    <span class="text-xs sm:text-sm font-semibold text-white">${escapeHtml(rukunName)}</span>
+                  <div class="p-3 rounded-xl bg-white/[0.06] border border-current/15 flex items-center gap-3" style="border-left: 3px solid ${activeZone.meta.color};">
+                    <span class="font-display text-xs font-extrabold opacity-75">${idx + 1}.</span>
+                    <span class="text-xs sm:text-sm font-semibold">${escapeHtml(rukunName)}</span>
                   </div>
                 `).join('')}
               </div>
@@ -2922,7 +2730,7 @@
           <div class="flex items-center justify-between">
             <div>
               <span class="text-[11px] uppercase tracking-[0.28em] text-[#FFD166] font-bold">RANKINGS</span>
-              <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">LEADERBOARD</h2>
+              <h2 class="font-display text-2xl sm:text-3xl font-extrabold">LEADERBOARD</h2>
             </div>
             <button id="btn-lb-back" type="button" class="futuristic-btn">← Kembali</button>
           </div>
@@ -2936,11 +2744,11 @@
                   <span class="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase ${slot.color.split(' ')[0]} mb-1">
                     #${slot.rank} ${slot.label}
                   </span>
-                  <div class="text-xs sm:text-sm font-bold text-white truncate max-w-full ${isMe ? 'text-cyan-300' : ''}">
+                  <div class="text-xs sm:text-sm font-bold truncate max-w-full ${isMe ? 'text-[var(--theme-accent-alt)]' : ''}">
                     ${escapeHtml(slot.item.name)}
                   </div>
-                  <div class="text-[11px] text-[#D7D2E2] mb-1.5">${slot.item.xp} XP · ${slot.item.score} pts</div>
-                  <div class="w-full ${slot.h} rounded-t-xl bg-white/[0.05] border-t-2 ${slot.color.split(' ')[1]} flex items-center justify-center font-display font-extrabold text-lg ${slot.color.split(' ')[0]}">
+                  <div class="text-[11px] text-[var(--text-soft)] mb-1.5">${slot.item.xp} XP · ${slot.item.score} pts</div>
+                  <div class="w-full ${slot.h} rounded-t-xl bg-white/[0.08] border-t-2 ${slot.color.split(' ')[1]} flex items-center justify-center font-display font-extrabold text-lg ${slot.color.split(' ')[0]}">
                     #${slot.rank}
                   </div>
                 </div>
@@ -2954,15 +2762,15 @@
             ${sorted.map((entry, idx) => {
               const isMe = currentUser && entry.name.toLowerCase() === currentUser;
               return `
-                <div class="flex flex-wrap items-center justify-between gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm ${isMe ? 'bg-cyan-400/15 border border-cyan-300/50' : 'bg-[#100D25]/30 border border-white/10'}">
+                <div class="flex flex-wrap items-center justify-between gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm ${isMe ? 'bg-cyan-400/15 border border-cyan-300/50' : 'bg-white/[0.06] border border-current/15'}">
                   <div class="flex items-center gap-3">
-                    <span class="font-display font-bold w-6 text-white/75">#${idx + 1}</span>
-                    <span class="font-bold ${isMe ? 'text-cyan-300' : 'text-white'}">${escapeHtml(entry.name)}</span>
+                    <span class="font-display font-bold w-6 opacity-75">#${idx + 1}</span>
+                    <span class="font-bold ${isMe ? 'text-[var(--theme-accent-alt)]' : ''}">${escapeHtml(entry.name)}</span>
                   </div>
                   <div class="flex items-center gap-3 sm:gap-5 text-xs">
-                    <span class="text-[#D7D2E2]">Skor: <strong class="text-white">${entry.score}</strong></span>
+                    <span class="text-[var(--text-soft)]">Skor: <strong>${entry.score}</strong></span>
                     <span class="font-bold text-[var(--theme-primary)]">${entry.xp} XP</span>
-                    <span class="px-2 py-0.5 rounded-full bg-white/10 text-cyan-200 font-semibold">${escapeHtml(entry.status || 'Active')}</span>
+                    <span class="px-2 py-0.5 rounded-full bg-white/10 font-semibold">${escapeHtml(entry.status || 'Active')}</span>
                   </div>
                 </div>
               `;
@@ -2990,8 +2798,8 @@
         <section class="w-full max-w-3xl mx-auto flex flex-col gap-4">
           <div class="flex items-center justify-between">
             <div>
-              <span class="text-[11px] uppercase tracking-[0.28em] text-[#A77BDE] font-bold">PREFERENCES</span>
-              <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">SETTINGS</h2>
+              <span class="text-[11px] uppercase tracking-[0.28em] text-[var(--theme-accent-alt)] font-bold">PREFERENCES</span>
+              <h2 class="font-display text-2xl sm:text-3xl font-extrabold">SETTINGS</h2>
             </div>
             <button id="btn-set-back" type="button" class="futuristic-btn">← Kembali</button>
           </div>
@@ -3000,10 +2808,10 @@
 
           <div class="space-y-5">
             <div>
-              <div class="text-xs uppercase tracking-widest text-cyan-300 font-bold mb-2">Graphics</div>
+              <div class="text-xs uppercase tracking-widest text-[var(--theme-accent-alt)] font-bold mb-2">Graphics</div>
               <div class="flex flex-wrap gap-2">
                 ${resolutions.map(r => `
-                  <button data-res="${r.id}" type="button" class="res-btn futuristic-btn py-1.5 px-3.5 text-xs ${s.resolution === r.id ? 'border-cyan-300 bg-cyan-400/20' : ''}">
+                  <button data-res="${r.id}" type="button" class="res-btn futuristic-btn py-1.5 px-3.5 text-xs ${s.resolution === r.id ? 'border-[var(--theme-primary)] bg-white/15' : ''}">
                     ${r.label}
                   </button>
                 `).join('')}
@@ -3013,7 +2821,7 @@
 
             <div>
               <div class="flex items-center justify-between text-xs mb-1.5">
-                <span class="uppercase tracking-widest font-bold text-white">Sound Effect</span>
+                <span class="uppercase tracking-widest font-bold">Sound Effect</span>
                 <span id="sfx-val-label" class="font-bold text-[var(--theme-primary)]">${s.sfxVolume}%</span>
               </div>
               <input id="sfx-slider" type="range" min="0" max="100" value="${s.sfxVolume}" class="neon-slider w-full" />
@@ -3021,8 +2829,8 @@
 
             <div>
               <div class="flex items-center justify-between text-xs mb-1.5">
-                <span class="uppercase tracking-widest font-bold text-white">Background Music</span>
-                <span id="music-val-label" class="font-bold text-cyan-300">${s.musicVolume}%</span>
+                <span class="uppercase tracking-widest font-bold">Background Music</span>
+                <span id="music-val-label" class="font-bold text-[var(--theme-accent-alt)]">${s.musicVolume}%</span>
               </div>
               <input id="music-slider" type="range" min="0" max="100" value="${s.musicVolume}" class="neon-slider w-full" />
             </div>
@@ -3030,7 +2838,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               <button id="toggle-mute" type="button" class="futuristic-btn justify-between px-4 py-2 text-xs">
                 <span>Mute</span>
-                <strong class="text-cyan-300">${s.muted ? 'ON' : 'OFF'}</strong>
+                <strong class="text-[var(--theme-accent-alt)]">${s.muted ? 'ON' : 'OFF'}</strong>
               </button>
               <button id="toggle-anim" type="button" class="futuristic-btn justify-between px-4 py-2 text-xs">
                 <span>Animation</span>
@@ -3038,12 +2846,12 @@
               </button>
               <button id="toggle-particles" type="button" class="futuristic-btn justify-between px-4 py-2 text-xs">
                 <span>Particle</span>
-                <strong class="text-[#A77BDE]">${s.particles ? 'ON' : 'OFF'}</strong>
+                <strong class="text-[var(--theme-primary)]">${s.particles ? 'ON' : 'OFF'}</strong>
               </button>
             </div>
 
             <div class="pt-2 flex items-center justify-between gap-3">
-              <span class="text-xs text-[#D7D2E2]">Reset XP, skor &amp; status permainan.</span>
+              <span class="text-xs text-[var(--text-soft)]">Reset XP, skor &amp; status permainan.</span>
               <button id="btn-reset-progress" type="button" class="futuristic-btn py-1.5 px-4 text-xs border-[#FF365C]/70 text-[#FF365C]">
                 Reset Progress
               </button>
@@ -3117,23 +2925,23 @@
         {
           id: 'futuristic',
           name: 'FUTURISTIC',
-          tag: 'DEFAULT',
-          desc: 'Midnight navy, purple glassmorphism, neon pink & electric cyan.',
-          bar: 'linear-gradient(90deg, #6339A8, #FF4FA3, #50DCFF)'
+          tag: 'DARK PURPLE',
+          desc: 'Dark purple glass (rgba(20, 10, 42, 0.94) & rgba(42, 22, 75, 0.92)), lavender border & soft lavender glow.',
+          bar: 'linear-gradient(90deg, rgba(20, 10, 42, 0.95), rgba(42, 22, 75, 0.95), #C084FC)'
         },
         {
           id: 'retro',
-          name: 'RETRO – BLUE ARCADE',
-          tag: 'BLUE ARCADE',
-          desc: 'Deep navy, arcade blue, electric blue, light cyan & CRT scanlines.',
-          bar: 'linear-gradient(90deg, #0B2D59, #1464D2, #35A7FF, #8BE4FF)'
+          name: 'RETRO – DARK NAVY ARCADE',
+          tag: 'DARK NAVY',
+          desc: 'Dark navy blue glass (rgba(7, 20, 46, 0.94) & rgba(15, 41, 82, 0.92)), cyan & bright blue text.',
+          bar: 'linear-gradient(90deg, rgba(7, 20, 46, 0.95), rgba(15, 41, 82, 0.95), #38BDF8)'
         },
         {
           id: 'gundam',
-          name: 'GUNDAM – MECHA WHITE RED BLUE',
-          tag: 'MECHA HUD',
-          desc: 'Clean white, metallic grey, mecha blue, signal red & accent yellow.',
-          bar: 'linear-gradient(90deg, #F4F5F7, #164B9A, #D62835, #F2C94C)'
+          name: 'GUNDAM – DARK GUNMETAL HUD',
+          tag: 'DARK METALLIC',
+          desc: 'Dark gunmetal glass (rgba(24, 28, 36, 0.94) & rgba(43, 49, 62, 0.92)), white, red & blue accents.',
+          bar: 'linear-gradient(90deg, rgba(24, 28, 36, 0.95), #2563EB, #EF4444)'
         }
       ];
 
@@ -3153,7 +2961,7 @@
             ${themes.map(t => {
               const active = appState.theme === t.id;
               return `
-                <button data-theme-choice="${t.id}" type="button" class="p-5 rounded-2xl text-left transition-all cursor-pointer bg-white/[0.04] ${active ? 'border-2 border-[var(--theme-primary)] shadow-[0_0_24px_var(--theme-glow)]' : 'border border-current/20 hover:border-[var(--theme-primary)]'}">
+                <button data-theme-choice="${t.id}" type="button" class="p-5 rounded-2xl text-left transition-all cursor-pointer bg-white/[0.08] ${active ? 'border-2 border-[var(--theme-primary)] shadow-[0_0_24px_var(--theme-glow)]' : 'border border-current/20 hover:border-[var(--theme-primary)]'}">
                   <div class="w-full h-3 rounded-full mb-4 border border-black/10" style="background:${t.bar};"></div>
                   <div class="flex items-center justify-between gap-2 mb-1.5">
                     <span class="font-display font-extrabold text-sm sm:text-base text-[var(--text-white)]">${t.name}</span>
@@ -3219,8 +3027,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       bgmManager.initOnce();
       applyThemeAndSettings();
-      initParticles();
-      renderParticles();
       navigateTo('loading');
     });
   </script>
