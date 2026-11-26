@@ -28,6 +28,10 @@
       --master-glass-blur: 20px;
       --master-radius: 26px;
 
+      /* Name Entry Motion & Layout Tokens */
+      --name-entry-max-w: 84vw;
+      --name-entry-min-h: clamp(500px, 76vh, 720px);
+
       /* Category Colors (Consistent Across All Views) */
       --cat-qalbi: #9B5CFF;
       --cat-qalbi-glow: rgba(155, 92, 255, 0.36);
@@ -371,7 +375,78 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: clamp(0.65rem, 2.5vw, 1.5rem);
+      margin-inline: auto;
+      padding: clamp(0.75rem, 2.5vw, 1.75rem);
+    }
+
+    .resolution-frame {
+      width: 100%;
+      max-width: 90vw;
+      margin-inline: auto;
+      background: transparent !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: max-width 0.3s ease;
+    }
+
+    body[data-res="1280x720"] .resolution-frame { max-width: 90vw; }
+    body[data-res="1600x900"] .resolution-frame { max-width: 90vw; }
+    body[data-res="1920x1080"] .resolution-frame { max-width: 90vw; }
+
+    /* =====================================================================
+       SINGLE MASTER COLOURED GLASS CONTAINER (20px BLUR + THEME TINT)
+       ===================================================================== */
+    .master-glass-container {
+      position: relative;
+      width: 100%;
+      margin-inline: auto;
+      background: var(--master-glass-bg);
+      backdrop-filter: blur(var(--master-glass-blur));
+      -webkit-backdrop-filter: blur(var(--master-glass-blur));
+      border: 1px solid var(--master-glass-border);
+      border-radius: var(--master-radius);
+      box-shadow: var(--master-glass-shadow), 0 0 36px var(--master-glass-glow);
+      padding: clamp(1.25rem, 3vw, 2.5rem);
+      overflow: hidden;
+    }
+
+    /* Name Entry Symmetric Full-Screen Composition */
+    .name-entry-stage {
+      width: 100%;
+      min-height: clamp(540px, 78vh, 840px);
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+      padding-block: clamp(1rem, 3vh, 2.25rem);
+      padding-inline: clamp(0.5rem, 3vw, 2rem);
+    }
+
+    .name-entry-header {
+      width: 100%;
+      max-width: 780px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .name-entry-form {
+      width: 100%;
+      max-width: min(560px, 92%);
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: clamp(0.85rem, 2vh, 1.35rem);
     }
 
     .resolution-frame {
@@ -873,6 +948,76 @@
     @keyframes holoPulse {
       0%, 100% { transform: translateY(0px) scale(1); }
       50% { transform: translateY(-5px) scale(1.03); }
+    }
+
+    /* Name Entry Entrance & Subtle Motion Polish */
+    @keyframes nameFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes nameSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .name-entry-fade {
+      animation: nameFadeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .name-entry-slide-1 {
+      animation: nameSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.08s;
+    }
+
+    .name-entry-slide-2 {
+      animation: nameSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.16s;
+    }
+
+    .name-entry-glass-expand {
+      width: 100%;
+      max-width: var(--name-entry-max-w);
+      min-height: var(--name-entry-min-h);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .name-entry-input-lg {
+      min-height: 60px;
+      font-size: clamp(1rem, 1.45vw, 1.25rem);
+      border-radius: 18px;
+    }
+
+    .name-entry-cta-lg {
+      min-height: 60px;
+      font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+      border-radius: 18px;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.2s ease,
+                  border-color 0.2s ease,
+                  background 0.2s ease;
+    }
+
+    .name-entry-cta-lg:hover {
+      transform: translateY(-2px) scale(1.015);
+    }
+
+    .name-entry-cta-lg:active {
+      transform: scale(0.975);
     }
 
     .hologram-body-idle {
@@ -1787,28 +1932,39 @@
        --------------------------------------------------------------------- */
     function renderNameEntry() {
       container.innerHTML = `
-        <section class="w-full min-h-[420px] sm:min-h-[480px] flex flex-col items-center justify-center text-center py-6 px-2">
-          <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center mb-4">
-            <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/60"></div>
-            <div class="holo-ring-inner absolute inset-3 rounded-full border border-[var(--theme-accent-alt)]/60"></div>
-            <div class="flex flex-col items-center justify-center z-10">
-              <span class="text-[9px] uppercase tracking-[0.26em] text-[var(--theme-accent-alt)] font-bold">RUKUN</span>
-              <span class="holo-13 text-3xl sm:text-4xl leading-none">13</span>
+        <section class="name-entry-stage">
+          <div class="name-entry-header">
+            <!-- 1. Logo SOLAT QUEST -->
+            <div class="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 flex items-center justify-center mb-4 sm:mb-5 mx-auto">
+              <div class="holo-ring-outer absolute inset-0 rounded-full border border-dashed border-[var(--theme-primary)]/65"></div>
+              <div class="holo-ring-inner absolute inset-3.5 sm:inset-4 rounded-full border border-[var(--theme-accent-alt)]/65"></div>
+              <div class="flex flex-col items-center justify-center z-10 text-center">
+                <span class="text-[10px] sm:text-xs uppercase tracking-[0.28em] text-[var(--theme-accent-alt)] font-bold">RUKUN</span>
+                <span class="holo-13 text-4xl sm:text-5xl lg:text-6xl leading-none">13</span>
+              </div>
             </div>
+
+            <!-- 2. Tajuk SOLAT QUEST -->
+            <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-white)] leading-tight text-center w-full mb-2">
+              SOLAT QUEST
+            </h1>
+
+            <!-- 3. Subtitle THE 13 RUKUN CHALLENGE -->
+            <p class="font-display text-xs sm:text-sm lg:text-base font-bold tracking-[0.26em] uppercase text-[var(--theme-accent-alt)] text-center w-full mb-2.5">
+              THE 13 RUKUN CHALLENGE
+            </p>
+
+            <!-- 4. Ayat ringkas pengenalan -->
+            <p class="text-sm sm:text-base lg:text-lg text-[var(--text-soft)] max-w-xl mx-auto leading-relaxed text-center">
+              Terokai, fahami &amp; kuasai urutan 13 rukun solat secara interaktif dalam pengembaraan berperingkat.
+            </p>
           </div>
 
-          <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--text-white)] leading-tight mb-2">
-            SOLAT QUEST
-          </h1>
-
-          <p class="text-xs sm:text-base text-[var(--text-soft)] max-w-md leading-relaxed mb-6">
-            13 Rukun Solat · Terokai, fahami &amp; kuasai urutan rukun solat secara interaktif.
-          </p>
-
-          <form id="name-entry-form" class="w-full max-w-md flex flex-col items-center gap-4">
-            <div class="relative flex items-center w-full">
-              <span class="absolute left-4 text-[var(--theme-primary)] pointer-events-none" aria-hidden="true">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <form id="name-entry-form" class="name-entry-form">
+            <!-- 5. Input nama yang besar -->
+            <div class="relative flex items-center justify-center w-full">
+              <span class="absolute left-4 sm:left-5 text-[var(--theme-primary)] pointer-events-none" aria-hidden="true">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                 </svg>
               </span>
@@ -1819,15 +1975,16 @@
                 autocomplete="off"
                 value="${escapeHtml(appState.playerName || '')}"
                 placeholder="Masukkan nama anda..."
-                class="glass-input w-full pl-12 pr-5 py-3.5 rounded-2xl text-base sm:text-lg font-semibold placeholder:opacity-60"
+                class="glass-input w-full pl-12 sm:pl-14 pr-5 py-4 sm:py-4.5 rounded-2xl text-base sm:text-lg lg:text-xl font-semibold text-center placeholder:opacity-60"
               />
             </div>
 
-            <p id="name-error" class="text-xs text-[#FF365C] font-semibold min-h-[1rem]"></p>
+            <p id="name-error" class="text-xs sm:text-sm text-[#FF365C] font-semibold min-h-[1.25rem] text-center w-full"></p>
 
-            <button type="submit" class="futuristic-btn btn-primary-hero w-full max-w-md py-3.5 text-sm sm:text-base font-bold tracking-wider">
+            <!-- 6. Butang MULA PENGEMBARAAN yang besar -->
+            <button type="submit" class="futuristic-btn btn-primary-hero w-full py-4 sm:py-4.5 text-sm sm:text-base lg:text-lg font-bold tracking-wider justify-center">
               <span>MULA PENGEMBARAAN</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
               </svg>
             </button>
